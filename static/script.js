@@ -1,3 +1,48 @@
+// Client-side navigation
+
+const navButtons =
+    document.querySelectorAll(".nav-btn");
+
+const pages =
+    document.querySelectorAll(".page");
+
+
+navButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const targetPage =
+            button.dataset.page;
+
+
+        // Hide all pages
+        pages.forEach(function(page) {
+
+            page.classList.remove("active-page");
+
+        });
+
+
+        // Remove active navigation
+        navButtons.forEach(function(nav) {
+
+            nav.classList.remove("active");
+
+        });
+
+
+        // Show selected page
+        document
+            .getElementById(targetPage)
+            .classList.add("active-page");
+
+
+        // Highlight selected navigation
+        button.classList.add("active");
+
+    });
+
+});
 let transactions = [];
 
 
