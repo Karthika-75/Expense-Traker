@@ -7,26 +7,62 @@
 
     <title>Expense Tracker</title>
 
+    <head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Expense Tracker</title>
+
+    <meta name="description"
+          content="Expense Tracker is a full-stack web application for managing income, expenses, categories and financial balance.">
+
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
+
+</head>
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <!-- Header -->
-        <header>
-            <div>
-                <h1>💰 Expense Tracker</h1>
-                <p>Track your money. Control your spending.</p>
-            </div>
+    <!-- Header -->
+    <header>
 
-            <div class="date" id="date"></div>
-        </header>
+        <div>
+            <h1>💰 Expense Tracker</h1>
+            <p>Track your money. Control your spending.</p>
+        </div>
+
+        <div class="date" id="date"></div>
+
+    </header>
 
 
-        <!-- Summary Cards -->
+    <!-- Navigation -->
+    <nav class="navigation">
+
+        <button class="nav-btn active" data-page="dashboard">
+            🏠 Dashboard
+        </button>
+
+        <button class="nav-btn" data-page="add">
+            ➕ Add Transaction
+        </button>
+
+        <button class="nav-btn" data-page="transactions">
+            📋 Transactions
+        </button>
+
+    </nav>
+
+
+    <!-- Dashboard Page -->
+    <main id="dashboard" class="page active-page">
+
         <section class="summary">
 
             <div class="card income-card">
@@ -49,8 +85,12 @@
 
         </section>
 
+    </main>
 
-        <!-- Add Transaction -->
+
+    <!-- Add Transaction Page -->
+    <main id="add" class="page">
+
         <section class="form-section">
 
             <h2>Add Transaction</h2>
@@ -58,6 +98,7 @@
             <form id="expenseForm">
 
                 <div class="form-group">
+
                     <label for="description">
                         Description
                     </label>
@@ -67,10 +108,12 @@
                         id="description"
                         placeholder="Example: Grocery shopping"
                         required>
+
                 </div>
 
 
                 <div class="form-group">
+
                     <label for="amount">
                         Amount
                     </label>
@@ -81,57 +124,57 @@
                         placeholder="Enter amount"
                         min="1"
                         required>
+
                 </div>
 
 
                 <div class="form-group">
+
                     <label for="type">
                         Type
                     </label>
 
                     <select id="type">
-                        <option value="expense">Expense</option>
-                        <option value="income">Income</option>
+
+                        <option value="expense">
+                            Expense
+                        </option>
+
+                        <option value="income">
+                            Income
+                        </option>
+
                     </select>
+
                 </div>
 
 
                 <div class="form-group">
+
                     <label for="category">
                         Category
                     </label>
 
                     <select id="category">
 
-                        <option value="Food">
-                            🍔 Food
-                        </option>
+                        <option value="Food">🍔 Food</option>
 
-                        <option value="Travel">
-                            🚗 Travel
-                        </option>
+                        <option value="Travel">🚗 Travel</option>
 
-                        <option value="Shopping">
-                            🛍️ Shopping
-                        </option>
+                        <option value="Shopping">🛍️ Shopping</option>
 
-                        <option value="Education">
-                            📚 Education
-                        </option>
+                        <option value="Education">📚 Education</option>
 
-                        <option value="Bills">
-                            🧾 Bills
-                        </option>
+                        <option value="Bills">🧾 Bills</option>
 
                         <option value="Entertainment">
                             🎬 Entertainment
                         </option>
 
-                        <option value="Other">
-                            📦 Other
-                        </option>
+                        <option value="Other">📦 Other</option>
 
                     </select>
+
                 </div>
 
 
@@ -143,8 +186,12 @@
 
         </section>
 
+    </main>
 
-        <!-- Transactions -->
+
+    <!-- Transactions Page -->
+    <main id="transactions" class="page">
+
         <section class="transactions">
 
             <div class="transaction-header">
@@ -190,16 +237,22 @@
 
         </section>
 
-
-        <!-- Footer -->
-        <footer>
-            <p>Expense Tracker • Full Stack Project</p>
-        </footer>
-
-    </div>
+    </main>
 
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            Expense Tracker • Full Stack Project
+        </p>
+
+    </footer>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='script.js') }}" defer></script>
 
 </body>
 
