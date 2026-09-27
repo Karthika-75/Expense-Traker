@@ -468,3 +468,44 @@ footer {
     }
 
 }
+/* Navigation */
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.nav-btn.active {
+    background: #6c63ff;
+    box-shadow: 0 5px 20px rgba(108, 99, 255, 0.35);
+}
+
+
+/* Page navigation */
+
+.page {
+    display: none;
+}
+
+.page.active-page {
+    display: block;
+}
